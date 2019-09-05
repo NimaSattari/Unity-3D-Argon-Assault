@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     [Tooltip("In ms^-1")][SerializeField] float ControlSpeed = 4f;
     [Tooltip("In m^")][SerializeField] float xRange = 4f;
     [Tooltip("In m^")][SerializeField] float yRange = 3f;
+    [SerializeField] GameObject[] guns;
 
     [Header("Screen-positon")]
     [SerializeField] float positionPitchFactor = -5f;
@@ -28,6 +29,7 @@ public class Player : MonoBehaviour
         {
             ProcessTranslation();
             ProcessRotation();
+            ProcessFiring();
         }
     }
 
@@ -61,5 +63,25 @@ public class Player : MonoBehaviour
         float clampedYPos = Mathf.Clamp(rawYpos, -yRange, yRange);
 
         transform.localPosition = new Vector3(clampedXPos, clampedYPos, transform.localPosition.z);
+    }
+    void ProcessFiring()
+    {
+        if (CrossPlatformInputManager.GetButton("Fire"))
+        {
+            SetGunAcitve(true);
+        }
+        else
+        {
+            SetGunAcitve(false);
+        }
+    }
+
+    private void SetGunAcitve(bool isActive)
+    {
+        foreach (GameObject gun in guns)
+        {
+            var emissionModule = gun.GetComponent<ParticleSystem>().emission;
+            emissionModule.enabled = isActive;
+        }
     }
 }

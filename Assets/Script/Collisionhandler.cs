@@ -9,7 +9,6 @@ public class Collisionhandler : MonoBehaviour
     [Tooltip("FX prefab on player")][SerializeField] GameObject deathFX;
 
 
-
     void OnTriggerEnter(Collider other)
     {
         StartDeathSequence();
