@@ -2452,8 +2452,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: f23147308f2cbfa46b2cb8212a3c9a9b, type: 3}
     m_FontSize: 85
@@ -2692,8 +2690,8 @@ Terrain:
   m_TreeBillboardDistance: 50
   m_TreeCrossFadeLength: 10
   m_TreeMaximumFullLODCount: 50
-  m_DetailObjectDistance: 50
-  m_DetailObjectDensity: 0.4
+  m_DetailObjectDistance: 25
+  m_DetailObjectDensity: 0.2
   m_HeightmapPixelError: 10
   m_SplatMapDistance: 500
   m_HeightmapMaximumLOD: 0
@@ -3616,11 +3614,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3483812519327438661, guid: 350fd6c3126eab2449b9a8e09798179c,
-        type: 3}
-      propertyPath: m_Name
-      value: Spawn Enemy
-      objectReference: {fileID: 0}
     - target: {fileID: 3483812519327438662, guid: 350fd6c3126eab2449b9a8e09798179c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3675,6 +3668,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3483812519327438661, guid: 350fd6c3126eab2449b9a8e09798179c,
+        type: 3}
+      propertyPath: m_Name
+      value: Spawn Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 350fd6c3126eab2449b9a8e09798179c, type: 3}
